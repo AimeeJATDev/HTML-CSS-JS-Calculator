@@ -13,10 +13,20 @@ main {
 }
 
 #screen {
+    margin-bottom: 5px;
+}
 
+#screen input {
+    width: 150px;
+    margin-right: 2px;
+}
+
+#screen button {
+    width: 50px;
 }
 
 #buttons {
     display: grid;
     grid-template-columns: repeat(4, 50px);
+    gap: 5px;
 }
