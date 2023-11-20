@@ -5,11 +5,15 @@
 main {
     width: 100%;
     height: 100%;
+    /*border: 1px solid red;*/
 }
 
 #calculator {
+    width: fit-content;
+    margin-top: 15%;
     margin-left: auto;
     margin-right: auto;
+    /*border: 1px solid black;*/
 }
 
 #screen {
@@ -18,6 +22,7 @@ main {
 
 #screen input {
     width: 205px;
+    height: 50px;
     margin-right: 2px;
 }
 
@@ -28,5 +33,6 @@ main {
 #buttons {
     display: grid;
     grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
     gap: 5px;
 }
