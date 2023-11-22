@@ -41,3 +41,11 @@ button {
     background-color: #EEF5FF;
     border-radius: 5px;
 }
+
+.red-button {
+    background-color: #A25772;
+}
+
+.blue-button {
+    background-color: #7C93C3;
+}
