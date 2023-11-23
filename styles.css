@@ -1,3 +1,5 @@
+/* Colour Ref: https://colorhunt.co/palette/eef5ff9eb8d97c93c3a25772 */
+
 *{
 
 }
@@ -13,7 +15,8 @@ main {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 15px;
     background-color: #9EB8D9;
 }
 
@@ -27,6 +30,11 @@ main {
     margin-right: 2px;
     background-color: #EEF5FF;
     border-radius: 5px;
+    border: 2px solid black;
+}
+
+#screen input:hover {
+    background-color: #cce1ff;
 }
 
 #buttons {
@@ -40,10 +48,22 @@ button {
     font-size: 20px;
     background-color: #EEF5FF;
     border-radius: 5px;
+    border: 1px solid #EEF5FF;
+}
+
+button:hover {
+    background-color: #cce1ff;
+    border: 1px solid #cce1ff;
 }
 
 .red-button {
     background-color: #A25772;
+    border: 1px solid #A25772;
+}
+
+.red-button:hover {
+    background-color: #95506a;
+    border: 1px solid #95506a;
 }
 
 .blue-button {
