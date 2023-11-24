@@ -5,15 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
         <script src="https://kit.fontawesome.com/42365249eb.js" crossorigin="anonymous"></script>
+        <script src="calculator.js"></script>
     </head>
     <body>
         <main>
             <div id="calculator">
                 <div id="screen">
-                    <input type="numeric">
+                    <input id="numInput" type="numeric">
                 </div>
                 <div id="buttons">
-                    <button class="red-button">C</button>
+                    <button class="red-button" onclick="clear()">C</button>
                     <button class="red-button">+/-</button>
                     <button class="red-button">%</button>
                     <button class="red-button"><i class="fa-solid fa-delete-left"></i></button>
@@ -25,8 +26,8 @@
                     <button>5</button>
                     <button>6</button>
                     <button class="red-button"><i class="fa-solid fa-xmark"></i></button>
-                    <button>1</button>
-                    <button>2</button>
+                    <button onclick="numOne()">1</button>
+                    <button onclick="numTwo()">2</button>
                     <button>3</button>
                     <button class="red-button"><i class="fa-solid fa-minus"></i></button>
                     <button>.</button>
@@ -36,5 +37,5 @@
                 </div>
             </div>
         </main>
-    </body>
+    </body>\
 </html>
