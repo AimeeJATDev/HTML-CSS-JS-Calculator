@@ -1,14 +1,18 @@
 
 let inputVal;
 
-function clear() {
+function clr() {
     document.getElementById("numInput").value = "";
 }
 
 function numOne() {
-    document.getElementById("numInput").value = "1";
+    document.getElementById("numInput").value += "1";
 }
 
 function numTwo() {
-    document.getElementById("numInput").value = "2";
+    document.getElementById("numInput").value += "2";
+}
+
+function enterNum() {
+
 }
