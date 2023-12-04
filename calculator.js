@@ -14,3 +14,17 @@ function del() {
 function enterNum(btnId) {
     document.getElementById("numInput").value += btnId;
 }
+
+function decimal() {
+    let input = document.getElementById("numInput").value;
+    let search = input.search(".");
+    alert(search);
+    
+    if (search == -1) {
+        document.getElementById("numInput").value += ".";
+    }
+}
+
+function equals() {
+
+}
