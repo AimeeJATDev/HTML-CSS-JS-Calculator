@@ -17,10 +17,11 @@ function enterNum(btnId) {
 
 function decimal() {
     let input = document.getElementById("numInput").value;
-    let search = input.search(".");
+    const regex = new RegExp ("[^0-9]", "g");
+    let search = regex.test(input);
     alert(search);
     
-    if (search == -1) {
+    if (search == false) {
         document.getElementById("numInput").value += ".";
     }
 }
