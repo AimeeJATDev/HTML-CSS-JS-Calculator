@@ -27,6 +27,17 @@ function decimal() {
     }
 }
 
+function symbols(btnId) {
+    let input = document.getElementById("numInput").value;
+    
+    const regex = new RegExp("[^0-9]", "g");
+    let search = regex.test(input);
+
+    if (search == false && input != "") {
+        document.getElementById("numInput").value += btnId;
+    }
+}
+
 function equals() {
 
 }
