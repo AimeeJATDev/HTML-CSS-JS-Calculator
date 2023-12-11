@@ -18,9 +18,9 @@ function enterNum(btnId) {
 function decimal() {
     let input = document.getElementById("numInput").value;
     // Checks whether there is already a decimal point
-    const regex = new RegExp ("[^0-9]", "g");
+    const regex = new RegExp ("\\.", "g");
     let search = regex.test(input);
-    
+
     //If no decimal points exist and the input isn't blank, a decimal point will be input
     if (search == false && input != "") {
         document.getElementById("numInput").value += ".";
@@ -32,6 +32,7 @@ function symbols(btnId) {
     
     const regex = new RegExp("[^0-9]", "g");
     let search = regex.test(input);
+    //alert(search);
 
     if (search == false && input != "") {
         document.getElementById("numInput").value += btnId;

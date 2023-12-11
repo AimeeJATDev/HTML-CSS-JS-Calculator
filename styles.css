@@ -31,6 +31,7 @@ main {
     background-color: #EEF5FF;
     border-radius: 5px;
     border: 2px solid black;
+    font-size: 20px;
 }
 
 #screen input:hover {
