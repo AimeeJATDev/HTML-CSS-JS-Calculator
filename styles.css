@@ -38,6 +38,12 @@ main {
     background-color: #cce1ff;
 }
 
+#sum {
+    width: fit-content;
+    position: absolute;
+    right: 43%;
+}
+
 #buttons {
     display: grid;
     grid-template-columns: repeat(4, 70px);
