@@ -17,7 +17,7 @@
                 </div>
                 <div id="buttons">
                     <button class="red-button" onclick="clr()">C</button>
-                    <button class="red-button">+/-</button>
+                    <button class="red-button" onclick="pos_neg()">+/-</button>
                     <button id="%" class="red-button" onclick="symbols(this.id)">%</button>
                     <button class="red-button" onclick="del()"><i class="fa-solid fa-delete-left"></i></button>
                     <button id="7" onclick="enterNum(this.id)">7</button>
@@ -34,7 +34,7 @@
                     <button id="-" class="red-button" onclick="symbols(this.id)"><i class="fa-solid fa-minus"></i></button>
                     <button id="." onclick="decimal()">.</button>
                     <button id="0" onclick="enterNum(this.id)">0</button>
-                    <button><i class="fa-solid fa-equals"></i></button>
+                    <button onclick="equals()"><i class="fa-solid fa-equals"></i></button>
                     <button id="+" class="red-button" onclick="symbols(this.id)"><i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>

@@ -42,6 +42,8 @@ main {
     width: fit-content;
     position: absolute;
     right: 43%;
+    margin-top: 5px;
+    display: none;
 }
 
 #buttons {

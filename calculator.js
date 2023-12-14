@@ -38,6 +38,19 @@ function symbols(btnId) {
     }
 }
 
+function pos_neg() {
+    let input = document.getElementById("numInput").value;
+
+    if (input[0] == "-") {
+        let newVal = input.substring(1);
+        document.getElementById("numInput").value = newVal;
+    }
+    else {
+        let newVal = "-" + input;
+        document.getElementById("numInput").value = newVal;
+    }
+}
+
 function equals() {
 
 }
