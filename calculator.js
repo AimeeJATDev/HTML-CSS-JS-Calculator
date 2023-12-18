@@ -60,6 +60,12 @@ function pos_neg() {
 }
 
 function equals() {
-    let firstNum;
-    let secondNum;
+    let input = document.getElementById("numInput").value;
+    let regex = new RegExp("[^0-9.]", "g");
+    let match = input.match(regex);
+
+    let firstNum = input.substring(0, input.indexOf(match));
+    let secondNum = input.slice(input.indexOf(match)); //TODO: Fix
+
+    alert(secondNum);
 }
