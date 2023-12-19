@@ -61,11 +61,30 @@ function pos_neg() {
 
 function equals() {
     let input = document.getElementById("numInput").value;
+    //let input1 = input.replace("/\s/g", "");
+    //alert(input1);
+    let sum = document.getElementById("sum");
     let regex = new RegExp("[^0-9.]", "g");
     let match = input.match(regex);
 
     let firstNum = input.substring(0, input.indexOf(match));
-    let secondNum = input.slice(input.indexOf(match)); //TODO: Fix
+    let secondNum = input.slice(input.indexOf(match) + 1);
+    let result = 0;
 
-    alert(secondNum);
+    if (match == "÷") {
+        result = firstNum / secondNum;
+    }
+    else if (match == "x") {
+        result = firstNum * secondNum;
+    }
+    else if(match == "-") {
+        result = firstNum - secondNum;
+    }
+    else if(match == "+") {
+        result = firstNum + secondNum;
+    }
+
+    document.getElementById("sum").innerHTML = input;
+    //sum.style.display = "block";
+    document.getElementById("numInput").value = result;
 }

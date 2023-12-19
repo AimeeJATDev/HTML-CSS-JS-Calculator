@@ -43,7 +43,7 @@ main {
     position: absolute;
     right: 43%;
     margin-top: 5px;
-    display: none;
+    /*display: none;*/
 }
 
 #buttons {
