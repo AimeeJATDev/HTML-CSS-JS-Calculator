@@ -4,6 +4,7 @@
 function clr() {
     // Clears everything from the input
     document.getElementById("numInput").value = "";
+    document.getElementById("sum").innerHTML = "";
 }
 
 function del() {
@@ -61,14 +62,14 @@ function pos_neg() {
 
 function equals() {
     let input = document.getElementById("numInput").value;
-    //let input1 = input.replace("/\s/g", "");
-    //alert(input1);
+    let ns_input = input.replace(/\s/g, '');
+    
     let sum = document.getElementById("sum");
     let regex = new RegExp("[^0-9.]", "g");
-    let match = input.match(regex);
+    let match = ns_input.match(regex);
 
-    let firstNum = input.substring(0, input.indexOf(match));
-    let secondNum = input.slice(input.indexOf(match) + 1);
+    let firstNum = ns_input.substring(0, ns_input.indexOf(match));
+    let secondNum = ns_input.slice(ns_input.indexOf(match) + 1);
     let result = 0;
 
     if (match == "÷") {
@@ -85,6 +86,5 @@ function equals() {
     }
 
     document.getElementById("sum").innerHTML = input;
-    //sum.style.display = "block";
     document.getElementById("numInput").value = result;
 }
