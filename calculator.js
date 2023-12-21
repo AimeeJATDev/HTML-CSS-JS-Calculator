@@ -44,6 +44,14 @@ function symbols(btnId) {
     }
 }
 
+function percentage() {
+    let input = document.getElementById("numInput").value;
+    let result = input / 100;
+
+    document.getElementById("numInput").value = result;
+    document.getElementById("sum").innerHTML = input + "%";
+}
+
 function pos_neg() {
     let input = document.getElementById("numInput").value;
 
@@ -64,7 +72,6 @@ function equals() {
     let input = document.getElementById("numInput").value;
     let ns_input = input.replace(/\s/g, '');
     
-    let sum = document.getElementById("sum");
     let regex = new RegExp("[^0-9.]", "g");
     let match = ns_input.match(regex);
 
