@@ -1,6 +1,4 @@
 
-//let inputVal;
-
 function clr() {
     // Clears everything from the input
     document.getElementById("numInput").value = "";
@@ -45,9 +43,11 @@ function symbols(btnId) {
 }
 
 function percentage() {
+    // Divides number by 100 to get percentage value 
     let input = document.getElementById("numInput").value;
     let result = input / 100;
 
+    // Displays sum and result to calculator screen
     document.getElementById("numInput").value = result;
     document.getElementById("sum").innerHTML = input + "%";
 }
@@ -70,15 +70,20 @@ function pos_neg() {
 
 function equals() {
     let input = document.getElementById("numInput").value;
+    // Removes spaces from input
     let ns_input = input.replace(/\s/g, '');
     
+    // Regex used to check for maths symbols
     let regex = new RegExp("[^0-9.]", "g");
     let match = ns_input.match(regex);
 
+    // Gets first number and second number from input and stores in variables
     let firstNum = ns_input.substring(0, ns_input.indexOf(match));
     let secondNum = ns_input.slice(ns_input.indexOf(match) + 1);
     let result = 0;
 
+
+    //Checks which sign is used and completes the calculation
     if (match == "÷") {
         result = firstNum / secondNum;
     }
@@ -89,9 +94,10 @@ function equals() {
         result = firstNum - secondNum;
     }
     else if(match == "+") {
-        result = firstNum + secondNum;
+        result = Number(firstNum) + Number(secondNum);
     }
 
+    // Shows previous input to the sum label and shows result on the input screen
     document.getElementById("sum").innerHTML = input;
     document.getElementById("numInput").value = result;
 }
