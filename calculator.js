@@ -33,7 +33,7 @@ function symbols(btnId) {
     let input = document.getElementById("numInput").value;
     
     // Checks whether the input includes a maths symbol
-    const regex = new RegExp("[^0-9.]", "g");
+    const regex = new RegExp("[^0-9.-]", "g");
     let search = regex.test(input);
 
     // If no and input isn't blank, the maths symbol will be added

@@ -1,7 +1,7 @@
 /* Colour Ref: https://colorhunt.co/palette/eef5ff9eb8d97c93c3a25772 */
 
 *{
-
+    
 }
 
 main {
@@ -43,7 +43,8 @@ main {
     position: absolute;
     right: 43%;
     margin-top: 5px;
-    /*display: none;*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 
 #buttons {
