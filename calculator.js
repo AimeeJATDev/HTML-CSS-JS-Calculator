@@ -1,3 +1,4 @@
+// Global Variables
 
 function clr() {
     // Clears everything from the input
@@ -58,12 +59,14 @@ function pos_neg() {
     // Checks whether number has a minus at the start
     if (input[0] == "-") {
         // If it does, remove the minus
-        let newVal = input.substring(1);
+        let newVal = Math.abs(input);
+        //let newVal = input.substring(1);
         document.getElementById("numInput").value = newVal;
     }
     else {
         // If not, add a minus
-        let newVal = "-" + input;
+        let newVal = -Math.abs(input);
+        //let newVal = "-" + input;
         document.getElementById("numInput").value = newVal;
     }
 }
@@ -74,7 +77,7 @@ function equals() {
     let ns_input = input.replace(/\s/g, '');
     
     // Regex used to check for maths symbols
-    let regex = new RegExp("[^0-9.]", "g");
+    let regex = new RegExp("(?!^)[^0-9.]", "g");
     let match = ns_input.match(regex);
 
     // Gets first number and second number from input and stores in variables
