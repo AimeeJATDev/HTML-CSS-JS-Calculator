@@ -57,7 +57,7 @@ function pos_neg() {
     let input = document.getElementById("numInput").value;
 
     // Checks whether number has a minus at the start
-    if (input[0] == "-") {
+    if (input[0] == "") {
         // If it does, remove the minus
         let newVal = Math.abs(input);
         //let newVal = input.substring(1);
@@ -81,10 +81,11 @@ function equals() {
     let match = ns_input.match(regex);
 
     // Gets first number and second number from input and stores in variables
-    let firstNum = ns_input.substring(0, ns_input.indexOf(match));
-    let secondNum = ns_input.slice(ns_input.indexOf(match) + 1);
-    let result = 0;
 
+    // Issue with minus numbers here
+    let firstNum = ns_input.substring(0, ns_input.lastIndexOf(match));
+    let secondNum = ns_input.slice(ns_input.lastIndexOf(match) + 1);
+    let result = 0;
 
     //Checks which sign is used and completes the calculation
     if (match == "÷") {
