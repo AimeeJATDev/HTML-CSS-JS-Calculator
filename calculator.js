@@ -1,4 +1,6 @@
 // Global Variables
+let firstNum;
+let secondNum;
 
 function clr() {
     // Clears everything from the input
@@ -32,14 +34,19 @@ function decimal() {
 
 function symbols(btnId) {
     let input = document.getElementById("numInput").value;
+    let sum = document.getElementById("sum").innerHTML;
+
+    firstNum = input;
     
     // Checks whether the input includes a maths symbol
     const regex = new RegExp("[^0-9.-]", "g");
-    let search = regex.test(input);
+    let search = regex.test(sum);
 
     // If no and input isn't blank, the maths symbol will be added
     if (search == false && input != "") {
-        document.getElementById("numInput").value += btnId;
+        document.getElementById("sum").innerHTML = input;
+        document.getElementById("sum").innerHTML += btnId;
+        document.getElementById("numInput").value = "";
     }
 }
 
@@ -55,36 +62,52 @@ function percentage() {
 
 function pos_neg() {
     let input = document.getElementById("numInput").value;
+    let ns_input = input.replace(/\s/g, '');
+    
+    let regex = new RegExp("(?!^)[^0-9.]", "g");
+    let search = regex.test(input)
+    let match = ns_input.match(regex);
 
-    // Checks whether number has a minus at the start
-    if (input[0] == "") {
-        // If it does, remove the minus
-        let newVal = Math.abs(input);
-        //let newVal = input.substring(1);
-        document.getElementById("numInput").value = newVal;
+    let lastNum = ns_input.slice(ns_input.indexOf(match, 1) + 1);
+
+    if (search == true) {
+        if (lastNum[0] == "-") {
+            let newVal = input.slice(0, input.indexOf(lastNum)) + Math.abs(lastNum);
+            document.getElementById("numInput").value = newVal;
+        }
+        else {
+            let newVal = input.slice(0, input.indexOf(lastNum)) + -Math.abs(lastNum);
+            document.getElementById("numInput").value = newVal;
+        }
     }
     else {
-        // If not, add a minus
-        let newVal = -Math.abs(input);
-        //let newVal = "-" + input;
-        document.getElementById("numInput").value = newVal;
-    }
+        // Checks whether number has a minus at the start
+        if (input[0] == "-") {
+            // If it does, remove the minus
+            let newVal = Math.abs(input);
+            document.getElementById("numInput").value = newVal;
+        }
+        else {
+            // If not, add a minus
+            let newVal = -Math.abs(input);
+            document.getElementById("numInput").value = newVal;
+        }
+    }    
 }
 
 function equals() {
     let input = document.getElementById("numInput").value;
+    let sum = document.getElementById("sum").innerHTML;
+
     // Removes spaces from input
-    let ns_input = input.replace(/\s/g, '');
+    let ns_sum = sum.replace(/\s/g, '');
     
     // Regex used to check for maths symbols
     let regex = new RegExp("(?!^)[^0-9.]", "g");
-    let match = ns_input.match(regex);
+    let match = ns_sum.match(regex);
 
-    // Gets first number and second number from input and stores in variables
-
-    // Issue with minus numbers here
-    let firstNum = ns_input.substring(0, ns_input.lastIndexOf(match));
-    let secondNum = ns_input.slice(ns_input.lastIndexOf(match) + 1);
+    // Gets second number from input and stores in variables
+    secondNum = input;
     let result = 0;
 
     //Checks which sign is used and completes the calculation
@@ -102,6 +125,6 @@ function equals() {
     }
 
     // Shows previous input to the sum label and shows result on the input screen
-    document.getElementById("sum").innerHTML = input;
+    document.getElementById("sum").innerHTML += input;
     document.getElementById("numInput").value = result;
 }
