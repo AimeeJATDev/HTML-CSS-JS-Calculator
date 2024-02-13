@@ -40,7 +40,7 @@ function symbols(btnId) {
     
     // Checks whether the input includes a maths symbol
     const regex = new RegExp("[^0-9.-]", "g");
-    let search = regex.test(sum);
+    let search = regex.test(input);
 
     // If no and input isn't blank, the maths symbol will be added
     if (search == false && input != "") {
@@ -62,37 +62,18 @@ function percentage() {
 
 function pos_neg() {
     let input = document.getElementById("numInput").value;
-    let ns_input = input.replace(/\s/g, '');
     
-    let regex = new RegExp("(?!^)[^0-9.]", "g");
-    let search = regex.test(input)
-    let match = ns_input.match(regex);
-
-    let lastNum = ns_input.slice(ns_input.indexOf(match, 1) + 1);
-
-    if (search == true) {
-        if (lastNum[0] == "-") {
-            let newVal = input.slice(0, input.indexOf(lastNum)) + Math.abs(lastNum);
-            document.getElementById("numInput").value = newVal;
-        }
-        else {
-            let newVal = input.slice(0, input.indexOf(lastNum)) + -Math.abs(lastNum);
-            document.getElementById("numInput").value = newVal;
-        }
+    // Checks whether number has a minus at the start
+    if (input[0] == "-") {
+        // If it does, remove the minus
+        let newVal = Math.abs(input);
+        document.getElementById("numInput").value = newVal;
     }
     else {
-        // Checks whether number has a minus at the start
-        if (input[0] == "-") {
-            // If it does, remove the minus
-            let newVal = Math.abs(input);
-            document.getElementById("numInput").value = newVal;
-        }
-        else {
-            // If not, add a minus
-            let newVal = -Math.abs(input);
-            document.getElementById("numInput").value = newVal;
-        }
-    }    
+        // If not, add a minus
+        let newVal = -Math.abs(input);
+        document.getElementById("numInput").value = newVal;
+    }
 }
 
 function equals() {
