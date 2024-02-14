@@ -86,6 +86,7 @@ function equals() {
     // Regex used to check for maths symbols
     let regex = new RegExp("(?!^)[^0-9.]", "g");
     let match = ns_sum.match(regex);
+    let search = ns_sum.search(/[^0-9.]$/g);
 
     // Gets second number from input and stores in variables
     secondNum = input;
@@ -106,6 +107,9 @@ function equals() {
     }
 
     // Shows previous input to the sum label and shows result on the input screen
-    document.getElementById("sum").innerHTML += input;
-    document.getElementById("numInput").value = result;
+    if (search != -1) {
+        document.getElementById("sum").innerHTML = sum + input;
+        document.getElementById("numInput").value = result;
+    }
+    
 }
