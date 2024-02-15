@@ -3,7 +3,7 @@ let firstNum;
 let secondNum;
 
 function clr() {
-    // Clears everything from the input
+    // Clears everything from the input and text label
     document.getElementById("numInput").value = "";
     document.getElementById("sum").innerHTML = "";
 }
@@ -34,7 +34,6 @@ function decimal() {
 
 function symbols(btnId) {
     let input = document.getElementById("numInput").value;
-    let sum = document.getElementById("sum").innerHTML;
 
     firstNum = input;
     
@@ -108,8 +107,7 @@ function equals() {
 
     // Shows previous input to the sum label and shows result on the input screen
     if (search != -1) {
-        document.getElementById("sum").innerHTML = sum + input;
+        document.getElementById("sum").innerHTML += input;
         document.getElementById("numInput").value = result;
     }
-    
 }
