@@ -1,5 +1,5 @@
 # Calculator
-I made this calculator using HTML, CSS and JS and it includes all of the basic operations a calculator should have. Below is a live version on CodePen which shows how it works.
+I made this calculator using HTML, CSS and JS and it includes all of the basic operations a calculator should have. Below is a live version on CodePen which shows it in action.
 
 #### CodePen: https://codepen.io/AimeeJATDev/full/JjVZNVG
 
