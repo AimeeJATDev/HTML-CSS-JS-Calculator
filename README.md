@@ -1,1 +1,4 @@
-# HTML-Calculator
+# Calculator
+I made this calculator using HTML, CSS and JS and it includes all of the operations a simple calculator has.
+
+![image](https://github.com/user-attachments/assets/e5f1df61-e371-40b7-b050-1f73a80cb1a5)
